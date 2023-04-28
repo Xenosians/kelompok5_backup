@@ -1,0 +1,28 @@
+algorithm description:
+1. Mark the current unmarked number as prime
+2. Scan all of the numbers after current number, if divisible by current number delete/mark as skip
+3. Go to the next number
+
+
+function scanIfDivisible(list scanList[], int curPrime) -> list :
+    list trimNumList.add(curPrime)
+
+    for x in scanList[]:
+        if x mod curPrime != 0 :
+            trimNumList.add(x)
+
+
+function sieveOfEratosthenes (int N) -> list
+    list primeList[] = generateNumbers(1,N)
+
+    i = 0
+    x = primeList[i]
+
+    while x**2 <= N:
+        list scanList[] = numList[i+1:]
+        trimList = scanIfDivisible(scanList, x)
+        primeList = primeList[:i+1] + trimNumList
+        
+        i++
+        x = primeList[i]
+    
